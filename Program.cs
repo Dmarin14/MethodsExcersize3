@@ -1,136 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MethodsExercise2
+namespace IterationStatements
 {
-    public class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            PositiveToNegative();
+            //TODO - Read each comment and complete its instruction
+            // like the example below
 
-            IncrementByThree();
+            //Create a List called "numbers" - DONE!
+            var numbers = new List<int>();
 
-            CheckIfEqual(3, 4);
+            //-----START HERE------------------------------------------
+            //Create a variable of type int and name it num
+            //initialize the variable with a value of 0 - DONE
+            int num = 0;
 
-            CheckEvenOrOdd(14);
 
-            PositiveOrNegative(-45);
-
-            Console.WriteLine("Enter your age to see if you can vote or not");
-
-            string userResponse = Console.ReadLine();
-
-            CheckVotingAge(userResponse);
-
-            Console.WriteLine("Enter a number");
-
-            string userRangeResponse = Console.ReadLine();
-
-            RangeofNumbers(userRangeResponse);
-
-            MultiplicationTable();
-
-            Console.ReadLine();
-        }
-
-        #region 1000 - -1000 Method
-        public static void PositiveToNegative()
-        {
-            Console.WriteLine("Starting positive");
-
-            for(int i = 1000; i >= -1000; i--)
+            // Create a do-while loop and use the template below:
+            do
             {
-                switch (i)
-                {
-                    case -1:
-                        Console.WriteLine("");
-                        Console.WriteLine("Starting negative");
-                        break;
+                // Increment num by 1
+                num++;
 
-                }
-                Console.WriteLine(i);
-            }
+                // Then add num to the collection - numbers
+                // Hint: reference num inside of the Add method's parentheses
+                numbers.Add(num);
 
-        }
-        #endregion
+            } while (num < 100);// <---- While your variable is less than 100 - DONE
 
-        #region 3 - 999 Method
-        public static void IncrementByThree()
-        {
-            Console.WriteLine("Starting increments of 3 to 999");
 
-            for(int i = 3; i < 1000; i+=3)
+
+
+            // Create a while loop
+            while (num < 200)// <--- While num is less than 200
             {
-                Console.WriteLine(i);
-            }
-        }
-        #endregion
+                num++;// Increment num by 1
+                numbers.Add(num);
 
-        #region Check if equal Method
-        public static void CheckIfEqual(int i, int x)
-        {
-            var response = (i == x) ? $"{i} and {x} are equal" : $"{i} and {x} aren't equal";
-            Console.WriteLine(response);
-        }
-        #endregion
-
-        #region Check if even or odd Method
-        public static void CheckEvenOrOdd(double i)
-        {
-            var response = (i / 2 == 1) ? $"{i} is even" : $"{i} is odd";
-            Console.WriteLine(response);
-        }
-        #endregion
-
-        #region Check if positive or negative Method
-        public static void PositiveOrNegative(int i)
-        {
-            var response = (i >= 0) ? $"{i} is positive" : $"{i} is negative";
-            Console.WriteLine(response);
-        }
-        #endregion
-
-        #region Check if able to vote Method
-        public static void CheckVotingAge(string input)
-        {
-            int userAge = Convert.ToInt32(input);
-            var response = (userAge < 18) ? "You are to young to vote!" : "You can vote!";
-            Console.WriteLine(response);
-        }
-        #endregion
-
-        #region Check if range is -10 - 10 from user Method
-        public static void RangeofNumbers(string input)
-        {
-            int queryNumbers = Convert.ToInt32(input);
-            var response = (queryNumbers <= 10 && queryNumbers >= -10) ? $"{queryNumbers} is within -10 and 10" : $"{queryNumbers} isn't within -10 and 10";
-            Console.WriteLine(response);
-        }
-        #endregion
-
-        #region Multiplication table Method
-        public static void MultiplicationTable()
-        {
-            int counter;
-            int number;
-
-
-            for(counter = 1; counter <= 12; counter++)
-             {
-                for (number = 1; number <= 12; number++)
-                {
-                    Console.WriteLine($"{counter} * {number} = {counter * number} ");
-                }
+                // Then add num to the collection numbers
+                //HINT: copy how this was done in the do while loop - DONE
 
             }
-            
-        }
-        #endregion
 
+            // This is to show the user that the numbers will start increasing on the console
+
+
+
+            // Create a foreach loop using the collection - numbers
+            //In the scope of the foreach loop, print each number in numbers
+            foreach (int i in numbers)
+            {
+
+                Console.WriteLine($"Increase: {i}");
+            }
+
+
+            Console.WriteLine("");
+
+
+            // Create a for loop - this will print the numbers in reverse order - from 200 to 1
+            // in your initializer set the value of i to 199
+            // in your conditional, as long as i is less than or equal to the amount of items in "numbers" - use (numbers.Count)
+            // AND as long as i is greater than or equal to 0
+            // Decrement i by 1
+
+            for (int i = 199; i <= numbers.Count; i--)//start for loop here
+            {
+                if (i >= 0) Console.WriteLine($"Decrease: {numbers[i]}");
+                // place numbers[i] inside of the Console.WriteLine() method
+            }
+
+            //------------End of exercise
+        }
     }
 }
-
